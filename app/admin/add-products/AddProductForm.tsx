@@ -144,7 +144,7 @@ const AddProductForm = () => {
             setIsProductCreated(true);
             router.refresh();
         }).catch((error)=>{
-            toast.error("Someting went wrong saving product to db")
+            toast.error("Someting went wrong saving product to db",error)
         }).finally(()=>{
             setIsLoading(false)
         })
@@ -152,6 +152,7 @@ const AddProductForm = () => {
     }
 
     const category = watch("category");
+    
     const setCustomValue =(id:string, value:any)=>{
         setValue(id,value,{
             shouldDirty:true,

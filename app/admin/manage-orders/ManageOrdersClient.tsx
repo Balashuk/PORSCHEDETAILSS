@@ -5,7 +5,7 @@ import {DataGrid, GridColDef} from "@mui/x-data-grid"
 import { formatPrice } from "@/utils/formatPrice";
 import Heading from "@/app/components/Heading";
 import Status from "@/app/components/Status";
-import { MdAccessTimeFilled, MdClose, MdDeliveryDining, MdDone, MdRemoveRedEye } from "react-icons/md";
+import { MdAccessTimeFilled, MdDeliveryDining, MdDone, MdRemoveRedEye } from "react-icons/md";
 import ActionBtn from "@/app/components/ActionBtn";
 import { useCallback } from "react";
 import axios from "axios";
@@ -107,7 +107,7 @@ const ManageOrdersClient:React.FC<ManageOrdersClientProps> = ({orders}) => {
         axios.put("/api/order",{
             id,
             deliveryStatus:"dispatched"
-        }).then((res)=>{
+        }).then((_res)=>{
             toast.success("Order dispatched")
             router.refresh();
         }).catch((err)=>{
@@ -121,7 +121,7 @@ const ManageOrdersClient:React.FC<ManageOrdersClientProps> = ({orders}) => {
         axios.put("/api/order",{
             id,
             deliveryStatus:"delivered"
-        }).then((res)=>{
+        }).then((_res)=>{
             toast.success("Order delivered")
             router.refresh();
         }).catch((err)=>{

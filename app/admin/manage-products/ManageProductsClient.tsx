@@ -73,7 +73,7 @@ const ManageProductsClient:React.FC<ManageProductsClientProps> = ({products}) =>
         axios.put("/api/product",{
             id,
             inStock: !inStock,
-        }).then((res)=>{
+        }).then((_res)=>{
             toast.success("Product status changed")
             router.refresh();
         }).catch((err)=>{
@@ -95,12 +95,12 @@ const ManageProductsClient:React.FC<ManageProductsClientProps> = ({products}) =>
                     }
                 }
             } catch(error){
-                return console.log("Deliting image error")
+                return console.log("Deliting image error",error)
             }
         }
         await handleImageDelete()
 
-        axios.delete(`/api/product/${id}`).then((res)=>{
+        axios.delete(`/api/product/${id}`).then((_res)=>{
             toast.success("Товар видалено")
             router.refresh();
         }).catch((err)=>{
