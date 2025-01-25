@@ -65,7 +65,7 @@ const CheckOutClient = () => {
                 .catch((error) => {
                     setLoading(false);
                     setError(true);
-                    toast.error("Что-то пошло не так");
+                    toast.error("Что-то пошло не так",error);
                 });
         }
     }, [cartProducts, paymentIntent, clientSecret, loading, router]);
