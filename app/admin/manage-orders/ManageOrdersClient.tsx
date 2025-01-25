@@ -25,6 +25,14 @@ type ExtendedOrder=Order &{
 const ManageOrdersClient:React.FC<ManageOrdersClientProps> = ({orders}) => {
 
     const router=useRouter();
+    interface OrderRow {
+        id: string;
+        customer: string;
+        amount: string;
+        paymentStatus: string;
+        date: string;
+        deliveryStatus: string;
+    }
 
     let rows:any=[]
     if(orders){
