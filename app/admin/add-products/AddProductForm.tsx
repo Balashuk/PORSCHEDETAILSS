@@ -65,7 +65,7 @@ const AddProductForm = () => {
         console.log("Product data",data)
 
         setIsLoading(true)
-        let uploadedImages:UploadedImageType[]=[]
+        const uploadedImages:UploadedImageType[]=[]
         if(!data.category){
             setIsLoading(false)
             return toast.error("Категорія не вибрана")

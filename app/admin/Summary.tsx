@@ -51,7 +51,7 @@ const Summary:React.FC<SummaryProps> = ({orders,products,users}) => {
 
     useEffect(()=>{
         setSummaryData((prev)=>{
-            let tempData={...prev}
+            const tempData={...prev}
 
             const totalSale=orders.reduce((acc,item)=>{
                 if(item.status==="complete"){
