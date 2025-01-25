@@ -73,7 +73,7 @@ const ManageProductsClient:React.FC<ManageProductsClientProps> = ({products}) =>
         axios.put("/api/product",{
             id,
             inStock: !inStock,
-        }).then((_res)=>{
+        }).then(()=>{
             toast.success("Product status changed")
             router.refresh();
         }).catch((err)=>{
@@ -100,7 +100,7 @@ const ManageProductsClient:React.FC<ManageProductsClientProps> = ({products}) =>
         }
         await handleImageDelete()
 
-        axios.delete(`/api/product/${id}`).then((_res)=>{
+        axios.delete(`/api/product/${id}`).then(()=>{
             toast.success("Товар видалено")
             router.refresh();
         }).catch((err)=>{

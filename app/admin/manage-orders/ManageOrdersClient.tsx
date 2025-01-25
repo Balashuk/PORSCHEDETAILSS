@@ -107,7 +107,7 @@ const ManageOrdersClient:React.FC<ManageOrdersClientProps> = ({orders}) => {
         axios.put("/api/order",{
             id,
             deliveryStatus:"dispatched"
-        }).then((_res)=>{
+        }).then(()=>{
             toast.success("Order dispatched")
             router.refresh();
         }).catch((err)=>{
@@ -121,7 +121,7 @@ const ManageOrdersClient:React.FC<ManageOrdersClientProps> = ({orders}) => {
         axios.put("/api/order",{
             id,
             deliveryStatus:"delivered"
-        }).then((_res)=>{
+        }).then(()=>{
             toast.success("Order delivered")
             router.refresh();
         }).catch((err)=>{
