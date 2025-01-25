@@ -1,8 +1,7 @@
-import Image from "next/image";
+
 import Container from "./components/Containers";
 import HomeBaner from "./components/HomeBaner";
-import { products } from "@/utils/products";
-import { truncateText } from "@/utils/truncateText";
+
 import ProductCart from "./components/products/ProductCart";
 import getProducts, { IProductParams } from "@/actions/getProducts";
 import NullData from "./components/NullData";
